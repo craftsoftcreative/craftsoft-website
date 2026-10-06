@@ -1,0 +1,30 @@
+# Craftsoft
+
+> İstanbul merkezli dijital pazarlama ve yazılım geliştirme ajansı. Meta reklamları, Google Ads, SEO, sosyal medya yönetimi, video & drone prodüksiyon, web tasarım ve özel yazılım hizmetleri sunar.
+
+## Hizmetler
+
+- [Dijital Pazarlama](https://craftsoft.com.tr/hizmetler/dijital-pazarlama): SEO, içerik stratejisi, analytics ve dönüşüm optimizasyonu
+- [Meta Reklamları](https://craftsoft.com.tr/hizmetler/meta-reklamlari): Facebook ve Instagram reklam kampanyası yönetimi, retargeting, A/B testleri
+- [Google Ads](https://craftsoft.com.tr/hizmetler/google-ads): Arama, Display, YouTube reklamları ve remarketing
+- [Sosyal Medya Yönetimi](https://craftsoft.com.tr/hizmetler/sosyal-medya): İçerik takvimi, topluluk yönetimi, influencer işbirlikleri
+- [Video & Fotoğraf](https://craftsoft.com.tr/hizmetler/video-fotograf): Prodüksiyon, kurgu, color grading, motion graphics
+- [Drone Çekim](https://craftsoft.com.tr/hizmetler/drone-cekim): 4K havadan görüntüleme, 360° panorama, izinli ve lisanslı uçuş
+- [Web Tasarım](https://craftsoft.com.tr/hizmetler/web-tasarim): UI/UX, responsive tasarım, landing page, marka kimliği
+- [Yazılım Geliştirme](https://craftsoft.com.tr/hizmetler/yazilim-gelistirme): Next.js, React, özel web uygulamaları, e-ticaret, SaaS
+
+## Blog
+
+Uzun ve konuya hakim Türkçe rehberler: https://craftsoft.com.tr/blog
+
+## Ürünler
+
+- AkıllıSofra: Restoranlar için QR dijital menü ve sipariş yönetimi (https://akillisofra.com.tr)
+- İhaleYapı: İhale ve tedarik süreçleri yönetim platformu (https://ihaleyapi.com.tr)
+- Salvo Agent: Web siteleri için yapay zekâ destekli satış ve destek ajanı (https://salvoagent.ai)
+
+## İletişim
+
+- E-posta: info@craftsoft.com.tr
+- Telefon: +90 555 123 45 67
+- Konum: İstanbul, Türkiye

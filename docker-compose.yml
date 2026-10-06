@@ -1,0 +1,11 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        # Gizli değerleri buraya ya da .env dosyasına koy
+        VITE_SALVO_ENDPOINT: ${VITE_SALVO_ENDPOINT:-}
+        VITE_RECAPTCHA_SITE_KEY: ${VITE_RECAPTCHA_SITE_KEY:-}
+    ports:
+      - "8080:80"
+    restart: unless-stopped

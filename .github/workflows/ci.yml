@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build (prerender'siz)
+        run: npm run build:ci
+
+  mobile-audit:
+    runs-on: ubuntu-latest
+    needs: lint-and-build
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Build
+        run: npm run build:ci
+
+      - name: Chromium kur (prerender + audit için)
+        run: npx -y playwright@1.62.1 install --with-deps chromium
+
+      - name: Production çıktısını mobil/tablet/desktop'ta tara
+        run: |
+          npx vite preview --port 4173 &
+          sleep 3
+          node scripts/mobile-audit.mjs http://localhost:4173
+          AUDIT_WIDTH=768 AUDIT_HEIGHT=1024 node scripts/mobile-audit.mjs http://localhost:4173
+          AUDIT_WIDTH=1440 AUDIT_HEIGHT=900 node scripts/mobile-audit.mjs http://localhost:4173

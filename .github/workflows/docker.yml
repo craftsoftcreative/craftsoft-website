@@ -1,0 +1,67 @@
+name: Docker
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+env:
+  IMAGE: ghcr.io/${{ github.repository }}
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE }}
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=sha,prefix=
+
+      - name: Build & push (prerender container içinde doğrulanır)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          build-args: |
+            VITE_SALVO_ENDPOINT=${{ vars.VITE_SALVO_ENDPOINT }}
+            VITE_RECAPTCHA_SITE_KEY=${{ vars.VITE_RECAPTCHA_SITE_KEY }}
+
+  # Kendi sunucuna deploy için: aşağıdaki job'u etkinleştir ve secret'ları ekle
+  #   SSH_HOST, SSH_USER, SSH_KEY (private key), SSH_PORT (opsiyonel)
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: build-and-push
+  #   steps:
+  #     - name: Sunucuda çek ve yeniden başlat
+  #       uses: appleboy/ssh-action@v1
+  #       with:
+  #         host: ${{ secrets.SSH_HOST }}
+  #         username: ${{ secrets.SSH_USER }}
+  #         key: ${{ secrets.SSH_KEY }}
+  #         script: |
+  #           docker pull ${{ env.IMAGE }}:main
+  #           docker stop craftsoft-web || true
+  #           docker rm craftsoft-web || true
+  #           docker run -d --name craftsoft-web --restart unless-stopped \
+  #             -p 80:80 ${{ env.IMAGE }}:main
