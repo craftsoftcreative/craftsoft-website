@@ -667,7 +667,7 @@ export const services: Service[] = [
       'Modern ve ölçeklenebilir web uygulamaları geliştiriyoruz. Next.js, React ve özel çözümler.',
     longDescription: [
       'Hazır paket yazılımlar bir noktadan sonra işletmenizin büyümesini kısıtlar. İş süreçlerinize tam uyan, ölçeklenebilir ve güvenli özel yazılımlar ise rekabet avantajı yaratır. Craftsoft olarak fikirden yayına kadar tüm yazılım yaşam döngüsünü yönetiyoruz.',
-      'Next.js, React ve TypeScript ile modern, hızlı ve SEO uyumlu web uygulamaları geliştiriyoruz. E-ticaret altyapıları, kurumsal yönetim panelleri, rezervasyon sistemleri ve SaaS ürünleri; kendi ürünlerimiz olan AkıllıSofra, İhaleYapı ve Salvo Agent\u0027ta kanıtlanmış uzmanlığımızın somut örnekleridir.',
+      'Next.js, React ve TypeScript ile modern, hızlı ve SEO uyumlu web uygulamaları geliştiriyoruz. E-ticaret altyapıları, kurumsal yönetim panelleri, rezervasyon sistemleri ve SaaS ürünleri; kendi ürünlerimiz olan AkıllıSofra, İhaleYapı ve Salvo Agent (CrewAI tabanlı yapay zekâ operasyon platformu) üzerinde kanıtlanmış uzmanlığımızın somut örnekleridir.',
       'Yazılım sürecimiz agile prensiplerle ilerler: 2 haftalık sprint\u0027lerde çalışan yazılımlar teslim eder, her sprint sonunda demo yaparız. Test otomasyonu, kod incelemesi ve CI/CD süreçleriyle kaliteyi standart hale getiriyoruz. Yayın sonrası bakım, izleme ve geliştirme desteği ile ürününüzü birlikte büyütüyoruz.',
     ],
     icon: Code2,

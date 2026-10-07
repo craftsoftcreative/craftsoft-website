@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, UtensilsCrossed, ShoppingCart, MessageSquare } from 'lucide-react';
+import { ArrowUpRight, UtensilsCrossed, ShoppingCart, Bot } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -42,12 +42,13 @@ const projects: Project[] = [
   {
     id: 3,
     name: 'Salvo Agent',
-    tagline: 'Yapay Zekâ Destekli Satış Ajanı',
-    description: 'Web siteleri için yapay zekâ destekli satış ve müşteri destek ajanı. Otomatik yanıtlar ve lead toplama.',
-    icon: MessageSquare,
+    tagline: 'Yapay Zekâ Operasyon Platformu',
+    description:
+      'SALVO merkezi süpervizörü liderliğindeki hiyerarşik CrewAI ajan takımlarıyla Finans, Satış, Pazarlama ve Mühendislik operasyonlarını tek çatıda otonom yöneten yeni nesil yapay zekâ platformu. CoinMarketCap, TradingView, Investing.com ve Bloomberg kaynaklı gerçek zamanlı veri kazıma, RAG hafızası ve Obsidian tarzı Sinaps Bilgi Ağı.',
+    icon: Bot,
     color: 'text-blue-500',
     gradient: 'from-blue-500/20 to-indigo-500/20',
-    features: ['AI Sohbet', 'Lead Toplama', 'Çoklu Kanal', 'Müşteri Analitiği'],
+    features: ['CrewAI Ajan Takımları', 'Gerçek Zamanlı Veri Kazıma', 'RAG Hafızası', 'Sinaps Bilgi Ağı'],
     status: 'Geliştirme',
     url: 'https://salvoagent.ai'
   }

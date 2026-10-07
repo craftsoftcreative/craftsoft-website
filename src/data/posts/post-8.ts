@@ -14,7 +14,7 @@ const post: BlogPost = {
   blocks: [
     {
       type: 'paragraph',
-      text: 'Türkiye ve dünyada yazılım girişimciliği her geçen yıl daha cazip bir alan hâline geliyor; ancak her ay binlerce SaaS fikri hayata geçirilmeye çalışılırken çok azı ilk ödeyen müşterisine ulaşabiliyor. Sorun genellikle fikrin kalitesinde değil, izlenen yol haritasının yanlış sıralanmış adımlarında gizli. Birçok ekip aylarca ürün geliştirir, lansman gününü bekler ve karşılaştığı gerçeklik soğuk bir sessizlik olur: kimse ürünü kullanmak istemiyor, çünkü kimse onu istememişti. Craftsoft olarak hem kendi ürünlerimiz AkıllıSofra (restoranlar için QR menü ve sipariş yönetim sistemi), İhaleYapı (ihale ve tedarik süreçleri yönetim platformu) ve Salvo Agent (yapay zekâ destekli satış ve destek ajanı) üzerinde hem de müşterilerimizin girişimlerinde bu yolculuğu defalarca yaşadık. Bu yazıda, fikrin ilk defa bir not defterine düştüğü andan banka hesabınıza ilk abonelik ücretinin yattığı ana kadar geçen süreci, hata yapmamanız için gereken sırayla ve somut araçlarla anlatıyoruz.',
+      text: 'Türkiye ve dünyada yazılım girişimciliği her geçen yıl daha cazip bir alan hâline geliyor; ancak her ay binlerce SaaS fikri hayata geçirilmeye çalışılırken çok azı ilk ödeyen müşterisine ulaşabiliyor. Sorun genellikle fikrin kalitesinde değil, izlenen yol haritasının yanlış sıralanmış adımlarında gizli. Birçok ekip aylarca ürün geliştirir, lansman gününü bekler ve karşılaştığı gerçeklik soğuk bir sessizlik olur: kimse ürünü kullanmak istemiyor, çünkü kimse onu istememişti. Craftsoft olarak hem kendi ürünlerimiz AkıllıSofra (restoranlar için QR menü ve sipariş yönetim sistemi), İhaleYapı (ihale ve tedarik süreçleri yönetim platformu) ve Salvo Agent (SALVO süpervizörü liderliğindeki hiyerarşik CrewAI ajan takımlarıyla finans, satış, pazarlama ve mühendislik operasyonlarını otonom yöneten yapay zekâ operasyon platformu) üzerinde hem de müşterilerimizin girişimlerinde bu yolculuğu defalarca yaşadık. Bu yazıda, fikrin ilk defa bir not defterine düştüğü andan banka hesabınıza ilk abonelik ücretinin yattığı ana kadar geçen süreci, hata yapmamanız için gereken sırayla ve somut araçlarla anlatıyoruz.',
     },
     {
       type: 'heading',
@@ -72,7 +72,7 @@ const post: BlogPost = {
     },
     {
       type: 'highlight',
-      text: 'Altın kural: MVP’nin başarı ölçütü özellik sayısı değil, aktivasyondur. Kullanıcı kayıt olduktan sonra üründe ilk “aha!” anını yaşaması gereken süreyi kısaltın. Salvo Agent’ta bu süreyi, kurulum kodunu kopyalayıp siteye yapıştırmadan sohbet penceresinin canlı görünmesine kadar geçen 4 dakikaya indirdik ve aktivasyon oranımız yüzde 34’ten yüzde 61’e çıktı.',
+      text: 'Altın kural: MVP’nin başarı ölçütü özellik sayısı değil, aktivasyondur. Kullanıcı kayıt olduktan sonra üründe ilk “aha!” anını yaşaması gereken süreyi kısaltın. AkıllıSofra’da bu süreyi, restoran menüsünü yükleyip QR kodun masalara hazır hale gelmesine kadar geçen 4 dakikaya indirdik ve aktivasyon oranımız yüzde 34’ten yüzde 61’e çıktı.',
     },
     {
       type: 'heading',
@@ -101,7 +101,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      text: 'Pilot kullanıcı stratejisi özellikle güçlüdür: hedef listenizden 5-10 işletmeyi ücretsiz kullanıma davet edin, ancak karşılığında düzenli geri bildirim toplantısı ve referans izni isteyin. Bu kullanıcılar ürününüzün en acımasız eleştirmenleri ve en samimi savunucuları olacaktır. Salvo Agent’ın ilk ticari sürümü öncesi 12 siteyi pilot programına aldık; bu sitelerin geri bildirimleriyle 40’tan fazla iyileştirme yaptık ve lansman haftasında aynı 12 pilot kullanıcının 9’u ödemeye geçti. Referans ve sosyal kanıt biriktirmek, B2B satışta karar süresini haftalar kısaltır; kurumsal alıcının “kimler kullanıyor?” sorusuna hazır bir cevabınız olmalıdır.',
+      text: 'Pilot kullanıcı stratejisi özellikle güçlüdür: hedef listenizden 5-10 işletmeyi ücretsiz kullanıma davet edin, ancak karşılığında düzenli geri bildirim toplantısı ve referans izni isteyin. Bu kullanıcılar ürününüzün en acımasız eleştirmenleri ve en samimi savunucuları olacaktır. Salvo Agent’ın ilk ticari sürümü öncesi 12 şirketi pilot programına aldık; bu şirketlerin geri bildirimleriyle 40’tan fazla iyileştirme yaptık ve lansman haftasında aynı 12 pilot müşterinin 9’u ödemeye geçti. Referans ve sosyal kanıt biriktirmek, B2B satışta karar süresini haftalar kısaltır; kurumsal alıcının “kimler kullanıyor?” sorusuna hazır bir cevabınız olmalıdır.',
     },
     {
       type: 'subheading',

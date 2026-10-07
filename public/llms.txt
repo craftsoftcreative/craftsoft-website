@@ -21,7 +21,7 @@ Uzun ve konuya hakim Türkçe rehberler: https://craftsoft.com.tr/blog
 
 - AkıllıSofra: Restoranlar için QR dijital menü ve sipariş yönetimi (https://akillisofra.com.tr)
 - İhaleYapı: İhale ve tedarik süreçleri yönetim platformu (https://ihaleyapi.com.tr)
-- Salvo Agent: Web siteleri için yapay zekâ destekli satış ve destek ajanı (https://salvoagent.ai)
+- Salvo Agent: Yeni nesil yapay zekâ operasyon platformu — SALVO merkezi süpervizörü liderliğinde hiyerarşik CrewAI ajan takımlarıyla finans, satış, pazarlama ve mühendislik operasyonlarını otonom yönetir; CoinMarketCap, TradingView, Investing.com ve Bloomberg kaynaklı gerçek zamanlı veri kazıma, RAG hafızası ve Obsidian tarzı Sinaps Bilgi Ağı sunar (https://salvoagent.ai)
 
 ## İletişim
 

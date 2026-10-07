@@ -40,7 +40,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'AkıllıSofra, İhaleYapı ve Salvo Agent projeleri nedir?',
-    answer: 'AkıllıSofra restoranlar için QR dijital menü ve sipariş yönetim sistemi, İhaleYapı ihale ve tedarik süreçleri yönetim platformu, Salvo Agent ise web siteleri için yapay zekâ destekli satış ve destek ajanıdır. Bu projeler, Craftsoft\'un yazılım geliştirme uzmanlığının bir göstergesidir.',
+    answer: 'AkıllıSofra restoranlar için QR dijital menü ve sipariş yönetim sistemi, İhaleYapı ihale ve tedarik süreçleri yönetim platformu, Salvo Agent ise SALVO merkezi süpervizörü liderliğindeki hiyerarşik CrewAI ajan takımlarıyla finans, satış, pazarlama ve mühendislik operasyonlarını otonom yöneten yapay zekâ operasyon platformudur. Bu projeler, Craftsoft\'un yazılım geliştirme uzmanlığının bir göstergesidir.',
     keywords: ['akillisofra', 'ihaleyapi', 'salvo agent', 'restoran yazılımı', 'ihale takip', 'yapay zekâ ajan']
   },
   {

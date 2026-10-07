@@ -97,7 +97,7 @@ export function About() {
               <p>
                 <strong className="text-gray-900">AkıllıSofra</strong> (QR menü ve restoran yönetimi),{' '}
                 <strong className="text-gray-900">İhaleYapı</strong> (ihale ve tedarik yönetimi) ve{' '}
-                <strong className="text-gray-900">Salvo Agent</strong> (yapay zekâ destekli satış ajanı) gibi kendi 
+                <strong className="text-gray-900">Salvo Agent</strong> (SALVO süpervizörlü yapay zekâ operasyon platformu) gibi kendi 
                 ürünlerimizi geliştirirken edindiğimiz deneyimi, müşterilerimizin projelerine de yansıtıyoruz.
               </p>
               <p>

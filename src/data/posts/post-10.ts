@@ -100,7 +100,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      text: 'Craftsoft olarak kendi ürünlerimizde ve müşteri projelerimizde yapay zekayı üç katmanlı bir çerçevede konumlandırıyoruz. Birinci katman, üretim hızlandırma: metin taslakları, görsel varyasyonları, veri temizleme ve raporlama otomasyonu. İkinci katman, içgörü derinliği: büyük veri setlerinden müşteri segmentasyonu, davranış öngörüsü ve kişiselleştirme sinyalleri çıkarma. Üçüncü katman, stratejik yönetim: tüm bu üretim ve içgörünün, markanın büyüme hedefleriyle ve etik sınırlarla uyumlu şekilde yönetilmesi. Salvo Agent’ın yapay zekâ destekli satış ve destek ajanı çözümünde de gördüğümüz gibi, teknoloji müşteri deneyimini ölçekler; ama o deneyimin stratejisini, markanın müşteriye vaadini ve sınırlarını biz belirliyoruz.',
+      text: 'Craftsoft olarak kendi ürünlerimizde ve müşteri projelerimizde yapay zekayı üç katmanlı bir çerçevede konumlandırıyoruz. Birinci katman, üretim hızlandırma: metin taslakları, görsel varyasyonları, veri temizleme ve raporlama otomasyonu. İkinci katman, içgörü derinliği: büyük veri setlerinden müşteri segmentasyonu, davranış öngörüsü ve kişiselleştirme sinyalleri çıkarma. Üçüncü katman, stratejik yönetim: tüm bu üretim ve içgörünün, markanın büyüme hedefleriyle ve etik sınırlarla uyumlu şekilde yönetilmesi. Salvo Agent’ın SALVO süpervizörü liderliğindeki ajan orkestrasyonunda da gördüğümüz gibi, teknoloji operasyonları ölçekler; ama o operasyonların stratejisini, markanın müşteriye vaadini ve sınırlarını biz belirliyoruz.',
     },
     {
       type: 'paragraph',
