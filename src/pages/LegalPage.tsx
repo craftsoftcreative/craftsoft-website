@@ -22,7 +22,7 @@ export function LegalPage() {
 
   return (
     <div className="pt-24 sm:pt-28 pb-20 bg-gray-50 min-h-screen">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.nav
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export function LegalPage() {
             <ShieldCheck className="w-4 h-4" />
             Yasal Bilgilendirme
           </span>
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{doc.title}</h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-gray-900 mb-4 leading-tight">{doc.title}</h1>
           <p className="flex items-center gap-2 text-sm text-gray-400">
             <CalendarDays className="w-4 h-4" />
             Son güncelleme: {new Date(doc.updatedAt).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
@@ -61,10 +61,10 @@ export function LegalPage() {
           className="bg-white rounded-2xl border border-gray-100 shadow-sm divide-y divide-gray-50"
         >
           {doc.sections.map((section) => (
-            <section key={section.heading} className="p-6 sm:p-8">
-              <h2 className="text-lg font-bold text-gray-900 mb-3">{section.heading}</h2>
+            <section key={section.heading} className="p-6 sm:p-10">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">{section.heading}</h2>
               {section.body.map((paragraph, i) => (
-                <p key={i} className="text-gray-600 leading-relaxed mb-3 last:mb-0">
+                <p key={i} className="text-gray-600 sm:text-[1.05rem] leading-[1.85] mb-4 last:mb-0">
                   {paragraph}
                 </p>
               ))}

@@ -39,11 +39,14 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-2.5 group mb-6">
-              <img
-                src="/favicon.png"
-                alt="Craftsoft"
-                className="w-10 h-10 rounded-xl object-cover ring-1 ring-white/15 shadow-md group-hover:scale-105 group-hover:-rotate-3 transition-transform duration-300"
-              />
+              <span className="relative flex items-center justify-center">
+                <span className="absolute w-11 h-11 rounded-xl gradient-bg opacity-0 scale-75 blur-[1px] group-hover:opacity-100 group-hover:scale-110 group-hover:blur-md transition-all duration-500" />
+                <img
+                  src="/favicon.png"
+                  alt="Craftsoft"
+                  className="relative w-10 h-10 rounded-xl object-cover ring-1 ring-white/15 bg-white shadow-md transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 group-hover:ring-2 group-hover:ring-craft-orange/60 group-hover:shadow-glow-orange"
+                />
+              </span>
               <span className="text-2xl font-bold text-white tracking-tight">
                 craftsoft<span className="text-craft-orange">creative</span>
               </span>

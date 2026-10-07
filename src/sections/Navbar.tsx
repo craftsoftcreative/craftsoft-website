@@ -86,11 +86,15 @@ export function Navbar() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5 group" aria-label="Craftsoft anasayfa">
-              <img
-                src="/favicon.png"
-                alt="Craftsoft"
-                className="w-9 h-9 rounded-xl object-cover ring-1 ring-gray-100 shadow-sm group-hover:scale-105 group-hover:-rotate-3 transition-transform duration-300"
-              />
+              <span className="relative flex items-center justify-center">
+                {/* Hover'da beliren gradyan halka */}
+                <span className="absolute w-10 h-10 rounded-xl gradient-bg opacity-0 scale-75 blur-[1px] group-hover:opacity-100 group-hover:scale-110 group-hover:blur-md transition-all duration-500" />
+                <img
+                  src="/favicon.png"
+                  alt="Craftsoft"
+                  className="relative w-9 h-9 rounded-xl object-cover ring-1 ring-gray-100 bg-white shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 group-hover:ring-2 group-hover:ring-craft-orange/60 group-hover:shadow-glow-orange"
+                />
+              </span>
               <span className="text-xl font-bold text-gray-900 tracking-tight">
                 craftsoft<span className="text-craft-orange">creative</span>
               </span>
