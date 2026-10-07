@@ -17,7 +17,8 @@ html {
   outline-offset: 2px;
 }
 
-/* Prevent horizontal scroll */
+/* Prevent horizontal scroll (clip: sticky konumlandırmayı bozmaz) */
+html,
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }

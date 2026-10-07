@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { services } from '@/data/services';
 import { Reveal } from '@/components/shared/Reveal';
 
@@ -93,7 +93,7 @@ export function Services() {
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1.5 transition-transform" />
                   </div>
 
-                  <Sparkles className="absolute top-4 right-4 w-4 h-4 text-gray-200 group-hover:text-craft-orange group-hover:animate-wiggle transition-colors" />
+                  <Icon className="absolute top-4 right-4 w-4 h-4 text-gray-200 group-hover:text-craft-orange group-hover:animate-wiggle transition-colors" />
                 </Link>
               </motion.div>
             );
