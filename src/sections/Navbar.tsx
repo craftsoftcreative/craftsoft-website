@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 interface NavItem {
   label: string;
@@ -12,7 +12,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Hizmetler', type: 'page', to: '/hizmetler' },
+  { label: 'Hizmetler', type: 'anchor', hash: 'hizmetler' },
   { label: 'Projeler', type: 'anchor', hash: 'projeler' },
   { label: 'Blog', type: 'page', to: '/blog' },
   { label: 'Hakkımızda', type: 'anchor', hash: 'hakkimizda' },
@@ -64,12 +64,6 @@ export function Navbar() {
     }
   };
 
-  const goHome = (e: React.MouseEvent) => {
-    e.preventDefault();
-    navigate('/');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const isActive = (item: NavItem) =>
     (item.type === 'page' && item.to && location.pathname.startsWith(item.to)) ||
     (item.type === 'anchor' && location.pathname === '/' && location.hash === `#${item.hash}`);
@@ -91,15 +85,16 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2 group" onClick={goHome}>
+            <Link to="/" className="flex items-center gap-2.5 group" aria-label="Craftsoft anasayfa">
+              <img
+                src="/favicon.png"
+                alt="Craftsoft"
+                className="w-9 h-9 rounded-xl object-cover ring-1 ring-gray-100 shadow-sm group-hover:scale-105 group-hover:-rotate-3 transition-transform duration-300"
+              />
               <span className="text-xl font-bold text-gray-900 tracking-tight">
                 craftsoft<span className="text-craft-orange">creative</span>
               </span>
-              <span className="relative w-7 h-7 rounded-lg gradient-bg animate-gradient flex items-center justify-center opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:rotate-12 transition-all duration-300 shadow-glow-orange">
-                <Zap className="w-4 h-4 text-white" fill="currentColor" />
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-white border-2 border-craft-orange" />
-              </span>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">

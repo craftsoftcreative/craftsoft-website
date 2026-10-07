@@ -1,7 +1,8 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Instagram, Linkedin, Twitter, Github, Mail, Phone, MapPin, ArrowUp, Zap } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, Github, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 import { services } from '@/data/services';
 import { blogPosts } from '@/data/blog';
+import { legalDocs } from '@/data/legal';
 
 const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/craftsoft', label: 'Instagram' },
@@ -37,12 +38,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-flex items-center gap-2 group mb-6">
+            <Link to="/" className="inline-flex items-center gap-2.5 group mb-6">
+              <img
+                src="/favicon.png"
+                alt="Craftsoft"
+                className="w-10 h-10 rounded-xl object-cover ring-1 ring-white/15 shadow-md group-hover:scale-105 group-hover:-rotate-3 transition-transform duration-300"
+              />
               <span className="text-2xl font-bold text-white tracking-tight">
                 craftsoft<span className="text-craft-orange">creative</span>
-              </span>
-              <span className="w-6 h-6 rounded-md gradient-bg animate-gradient flex items-center justify-center opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:rotate-12 transition-all duration-300">
-                <Zap className="w-3.5 h-3.5 text-white" fill="currentColor" />
               </span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
@@ -166,10 +169,23 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-white/40 text-sm text-center sm:text-left">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+            <p className="text-white/40 text-sm text-center lg:text-left">
               © {new Date().getFullYear()} Craftsoft. Tüm hakları saklıdır.
             </p>
+
+            <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+              {legalDocs.map((doc) => (
+                <li key={doc.slug}>
+                  <Link
+                    to={`/yasal/${doc.slug}`}
+                    className="text-white/40 hover:text-craft-orange text-xs transition-colors"
+                  >
+                    {doc.shortTitle}
+                  </Link>
+                </li>
+              ))}
+            </ul>
 
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => {

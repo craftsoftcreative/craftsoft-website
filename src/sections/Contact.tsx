@@ -44,7 +44,7 @@ const contactInfo = [
     icon: MapPin,
     label: 'Konum',
     value: 'İstanbul, Türkiye',
-    href: '#'
+    href: 'https://www.google.com/maps/search/?api=1&query=%C4%B0stanbul'
   }
 ];
 
@@ -172,6 +172,9 @@ export function Contact() {
                   <a
                     key={index}
                     href={item.href}
+                    {...(item.href.startsWith('http')
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
                     className="group flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 hover:border-orange-200 hover:shadow-md transition-all duration-300"
                   >
                     <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors">

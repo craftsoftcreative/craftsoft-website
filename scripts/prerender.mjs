@@ -41,7 +41,10 @@ function collectSlugs() {
     })
     .filter(Boolean);
 
-  return { serviceSlugs, postSlugs };
+  const legalSrc = readFileSync(join(ROOT, 'src/data/legal.ts'), 'utf8');
+  const legalSlugs = [...legalSrc.matchAll(/slug: '([^']+)'/g)].map((m) => m[1]);
+
+  return { serviceSlugs, postSlugs, legalSlugs };
 }
 
 function serveDist(port) {
@@ -74,13 +77,14 @@ async function main() {
     console.log('PRERENDER_SKIP=1 — prerender atlandı');
     return;
   }
-  const { serviceSlugs, postSlugs } = collectSlugs();
+  const { serviceSlugs, postSlugs, legalSlugs } = collectSlugs();
   const routes = [
     { path: '/', changefreq: 'weekly', priority: '1.0' },
     { path: '/hizmetler', changefreq: 'monthly', priority: '0.9' },
     { path: '/blog', changefreq: 'weekly', priority: '0.8' },
     ...serviceSlugs.map((slug) => ({ path: `/hizmetler/${slug}`, changefreq: 'monthly', priority: '0.8' })),
     ...postSlugs.map((slug) => ({ path: `/blog/${slug}`, changefreq: 'monthly', priority: '0.7' })),
+    ...legalSlugs.map((slug) => ({ path: `/yasal/${slug}`, changefreq: 'yearly', priority: '0.3' })),
   ];
 
   const port = 4173 + Math.floor(Math.random() * 500);

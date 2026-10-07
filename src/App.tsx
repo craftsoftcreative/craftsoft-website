@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Toaster } from '@/components/ui/sonner';
 import { usePageMeta } from '@/hooks/usePageMeta';
@@ -16,7 +16,23 @@ import { ServicesPage } from '@/pages/ServicesPage';
 import { ServiceDetailPage } from '@/pages/ServiceDetailPage';
 import { BlogPage } from '@/pages/BlogPage';
 import { BlogPostPage } from '@/pages/BlogPostPage';
+import { LegalPage } from '@/pages/LegalPage';
 import './App.css';
+
+// HashRouter döneminden kalan "/#/hizmetler/..." biçimli URL'leri temiz
+// path'e yönlendirir (eski bookmark'lar ve indekslenmiş linkler için)
+function LegacyHashRedirect() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.hash.startsWith('#/')) {
+      navigate(location.hash.slice(1), { replace: true });
+    }
+  }, [location.hash, navigate]);
+
+  return null;
+}
 
 function ScrollManager() {
   const { pathname, hash, state } = useLocation();
@@ -91,6 +107,7 @@ function AppRoutes() {
         <Route path="/hizmetler/:slug" element={<PageWrapper><ServiceDetailPage /></PageWrapper>} />
         <Route path="/blog" element={<PageWrapper><BlogPage /></PageWrapper>} />
         <Route path="/blog/:slug" element={<PageWrapper><BlogPostPage /></PageWrapper>} />
+        <Route path="/yasal/:slug" element={<PageWrapper><LegalPage /></PageWrapper>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AnimatePresence>
@@ -111,6 +128,7 @@ function App() {
         }}
       />
       <BrowserRouter>
+        <LegacyHashRedirect />
         <ScrollManager />
         <Navbar />
         <AppRoutes />
