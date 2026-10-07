@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight, UtensilsCrossed, ShoppingCart, Bot } from 'lucide-react';
 
 interface Project {
   id: number;
+  slug: string;
   name: string;
   tagline: string;
   description: string;
@@ -17,6 +19,7 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    slug: 'akillisofra',
     name: 'AkıllıSofra',
     tagline: 'Akıllı Restoran Yönetimi',
     description: 'Restoranlar için kapsamlı dijital çözüm. QR menü, sipariş yönetimi, mutfak ekranları ve raporlama sistemi.',
@@ -29,6 +32,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    slug: 'ihaleyapi',
     name: 'İhaleYapı',
     tagline: 'İhale & Tedarik Yönetimi',
     description: 'Kamu ve özel sektör için ihale ve tedarik süreçleri yönetim platformu. İhale takibi ve teklif yönetimi.',
@@ -41,6 +45,7 @@ const projects: Project[] = [
   },
   {
     id: 3,
+    slug: 'salvo-agent',
     name: 'Salvo Agent',
     tagline: 'Yapay Zekâ Operasyon Platformu',
     description:
@@ -56,13 +61,13 @@ const projects: Project[] = [
 
 export function Projects() {
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const index = cardRefs.current.indexOf(entry.target as HTMLDivElement);
+          const index = cardRefs.current.indexOf(entry.target as HTMLAnchorElement);
           if (entry.isIntersecting && index !== -1) {
             setVisibleCards((prev) => new Set([...prev, index]));
           }
@@ -102,11 +107,12 @@ export function Projects() {
             const isVisible = visibleCards.has(index);
             
             return (
-              <div
+              <Link
+                to={`/urunler/${project.slug}`}
                 key={project.id}
                 ref={(el) => { cardRefs.current[index] = el; }}
                 className={`
-                  group relative rounded-2xl overflow-hidden
+                  group relative rounded-2xl overflow-hidden block
                   transition-all duration-700
                   ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
                 `}
@@ -165,17 +171,12 @@ export function Projects() {
                   </div>
 
                   {/* CTA */}
-                  <a 
-                    href={project.url || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium text-craft-orange/70 hover:text-craft-orange group/btn transition-colors"
-                  >
-                    <span>Projeyi İncele</span>
-                    <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                  </a>
+                  <span className="flex items-center gap-2 text-sm font-medium text-craft-orange/70 group-hover:text-craft-orange transition-colors">
+                    <span>Detayları Gör</span>
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </span>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

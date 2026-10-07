@@ -17,6 +17,7 @@ import { ServiceDetailPage } from '@/pages/ServiceDetailPage';
 import { BlogPage } from '@/pages/BlogPage';
 import { BlogPostPage } from '@/pages/BlogPostPage';
 import { LegalPage } from '@/pages/LegalPage';
+import { ProductPage } from '@/pages/ProductPage';
 import './App.css';
 
 // HashRouter döneminden kalan "/#/hizmetler/..." biçimli URL'leri temiz
@@ -108,6 +109,7 @@ function AppRoutes() {
         <Route path="/blog" element={<PageWrapper><BlogPage /></PageWrapper>} />
         <Route path="/blog/:slug" element={<PageWrapper><BlogPostPage /></PageWrapper>} />
         <Route path="/yasal/:slug" element={<PageWrapper><LegalPage /></PageWrapper>} />
+        <Route path="/urunler/:slug" element={<PageWrapper><ProductPage /></PageWrapper>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AnimatePresence>
