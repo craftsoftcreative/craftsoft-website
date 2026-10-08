@@ -310,9 +310,9 @@ export const services: Service[] = [
     slug: 'sosyal-medya',
     title: 'Sosyal Medya Yönetimi',
     shortTitle: 'Yönetim & İçerik',
-    tagline: 'Markanıza bir kişilik kazandırın, topluluğunuzla büyüyün',
+    tagline: 'Instagram başta olmak üzere tüm platformlarda markanızı büyütün',
     description:
-      'Sosyal medya hesaplarınızı profesyonel şekilde yönetiyor, etkileşimi ve takipçi sayınızı artırıyoruz.',
+      'Instagram, TikTok, Facebook ve LinkedIn hesaplarınızı profesyonel şekilde yönetiyor; etkileşimi ve takipçi sayınızı artırıyoruz.',
     longDescription: [
       'Sosyal medya artık sadece paylaşım yapılan bir vitrin değil; markaların müşterileriyle birebir konuştuğu, sadakat inşa ettiği bir ilişki platformu. Tutarlı, özgün ve marka diline uygun içerik üretimi bu platformlarda görünür olmanın tek yoludur.',
       'Craftsoft olarak Instagram, Facebook, LinkedIn, X (Twitter) ve TikTok platformlarında uçtan uca hesap yönetimi yapıyoruz. İçerik takvimi hazırlıyor, görsel tasarımları üretiyor, hikaye ve reel formatlarında düzenli paylaşımlar planlıyoruz.',
@@ -323,11 +323,11 @@ export const services: Service[] = [
     softBg: 'bg-pink-50',
     textColor: 'text-pink-600',
     features: [
+      'Instagram Yönetimi',
+      'Reels & TikTok Üretimi',
       'İçerik Takvimi',
-      'Grafik Tasarım',
       'Topluluk Yönetimi',
       'Influencer İşbirlikleri',
-      'Reels & TikTok Üretimi',
       'Sosyal Medya Dinleme',
     ],
     deliverables: [

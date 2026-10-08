@@ -24,9 +24,9 @@ const faqs: FAQItem[] = [
     keywords: ['google ads', 'arama ağı reklamları', 'display reklamları', 'youtube reklamları', 'remarketing', 'google ads sertifikası']
   },
   {
-    question: 'Web tasarım ve yazılım geliştirme hizmetlerinizde hangi teknolojileri kullanıyorsunuz?',
-    answer: 'Modern web teknolojileri olan Next.js, React, TypeScript ve Tailwind CSS kullanıyoruz. Özel web uygulamaları, e-ticaret siteleri, kurumsal web siteleri ve API geliştirme hizmetleri sunuyoruz. AkıllıSofra, İhaleYapı ve Salvo Agent gibi kendi ürünlerimizi de bu teknolojilerle geliştiriyoruz.',
-    keywords: ['next.js', 'react', 'web tasarım', 'web geliştirme', 'yazılım geliştirme', 'e-ticaret', 'api geliştirme']
+    question: 'Web tasarım ve yazılım geliştirme hizmetleriniz neleri kapsıyor?',
+    answer: 'Kurumsal web siteleri, e-ticaret altyapıları, özel yönetim panelleri, rezervasyon ve sipariş sistemleri ile fikirden lansmana kadar uçtan uca SaaS ürün geliştirme hizmetleri sunuyoruz. AkıllıSofra, İhaleYapı ve Salvo Agent gibi kendi ürünlerimiz üzerinde kanıtlanmış ürün geliştirme deneyimimizi her projeye taşıyoruz.',
+    keywords: ['web tasarım', 'web geliştirme', 'yazılım geliştirme', 'e-ticaret', 'kurumsal web sitesi', 'saas geliştirme']
   },
   {
     question: 'Drone çekim hizmetleriniz hangi alanlarda kullanılabilir?',

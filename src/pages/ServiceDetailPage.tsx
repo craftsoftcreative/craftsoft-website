@@ -11,7 +11,6 @@ import {
   Rocket,
   BarChart3,
   Users,
-  Wrench,
 } from 'lucide-react';
 import { useRef, useState } from 'react';
 import { getServiceBySlug, services } from '@/data/services';
@@ -299,57 +298,29 @@ export function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* ===== Kimler İçin + Araçlar ===== */}
+      {/* ===== Kimler İçin ===== */}
       <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Reveal>
-              <div className="h-full p-7 sm:p-9 rounded-3xl bg-white border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className={`w-11 h-11 rounded-xl ${service.softBg} flex items-center justify-center`}>
-                    <Users className={`w-5 h-5 ${service.textColor}`} />
-                  </div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-                    Bu Hizmet <span className="gradient-text">Kimler İçin?</span>
-                  </h2>
+          <Reveal>
+            <div className="p-7 sm:p-9 rounded-3xl bg-white border border-gray-100 shadow-sm">
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`w-11 h-11 rounded-xl ${service.softBg} flex items-center justify-center`}>
+                  <Users className={`w-5 h-5 ${service.textColor}`} />
                 </div>
-                <ul className="space-y-4">
-                  {service.idealFor.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-gray-600 leading-relaxed">
-                      <CheckCircle2 className={`w-5 h-5 ${service.textColor} mt-0.5 flex-shrink-0`} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+                  Bu Hizmet <span className="gradient-text">Kimler İçin?</span>
+                </h2>
               </div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="h-full p-7 sm:p-9 rounded-3xl bg-craft-navy text-white shadow-sm overflow-hidden relative">
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-craft-orange/10 rounded-full blur-3xl" />
-                <div className="relative flex items-center gap-3 mb-6">
-                  <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center">
-                    <Wrench className="w-5 h-5 text-craft-orange" />
-                  </div>
-                  <h2 className="text-xl sm:text-2xl font-bold">
-                    Kullandığımız <span className="text-craft-orange">Araçlar</span>
-                  </h2>
-                </div>
-                <div className="relative flex flex-wrap gap-2.5">
-                  {service.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="px-4 py-2 rounded-full text-sm font-medium bg-white/5 border border-white/10 text-white/80 hover:bg-craft-orange hover:border-craft-orange hover:text-white hover:-translate-y-0.5 transition-all duration-300 cursor-default"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-                <p className="relative text-white/40 text-sm mt-6">
-                  Her projede işe yarayan araç seti, ihtiyaca göre özelleştirilir.
-                </p>
-              </div>
-            </Reveal>
-          </div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                {service.idealFor.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-gray-600 leading-relaxed">
+                    <CheckCircle2 className={`w-5 h-5 ${service.textColor} mt-0.5 flex-shrink-0`} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </section>
 
