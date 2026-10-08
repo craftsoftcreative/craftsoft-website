@@ -1,4 +1,4 @@
-import { UtensilsCrossed, ShoppingCart, Bot, type LucideIcon } from 'lucide-react';
+import { UtensilsCrossed, HardHat, Bot, type LucideIcon } from 'lucide-react';
 
 export interface ProductFeature {
   title: string;
@@ -152,111 +152,111 @@ export const products: Product[] = [
   {
     slug: 'ihaleyapi',
     name: 'İhaleYapı',
-    tagline: 'İhale & Tedarik Yönetimi',
+    tagline: 'İnşaat & Yapı Sektörüne Özel İhale Platformu',
     status: 'Aktif',
     url: 'https://ihaleyapi.com.tr',
-    icon: ShoppingCart,
+    icon: HardHat,
     color: 'text-emerald-500',
     gradient: 'from-emerald-500 to-teal-500',
     description:
-      'Kamu ve özel sektör için ihale ve tedarik süreçleri yönetim platformu. İhale takibi ve teklif yönetimi.',
-    heroTag: 'Kurumsal Tedarik Platformu',
+      'İnşaat ve yapı firmaları için sektöre özel planlanıp geliştirilen ihale yönetim platformu. Kamu ve özel sektör yapım işi ihalelerini takip edin, metraj ve yaklaşık maliyetinizi hesaplayın, teklif sürecinizi tek panelden yönetin.',
+    heroTag: 'İnşaat Sektörüne Özel Geliştirildi',
     heroDescription:
-      'Yüzlerce ihale kaynağını tek panelde toplayın, uygun fırsatları anında yakalayın, teklif süreçlerini ve tedarikçi performansını tek çatıda yönetin.',
+      'İnşaat ve yapı firmaları için baştan sona sektöre özel tasarlanan İhaleYapı; EKAP, ilan.gov.tr ve özel sektör kaynaklarındaki yapım işi ihalelerini tek panelde toplar, metraj ve yaklaşık maliyet hesaplamanızı dijitalleştirir, teklif dosyanızı belge kontrol listeleriyle hatasız hazırlamanızı sağlar.',
     highlights: [
       { value: '100+', label: 'İzlenen ihale kaynağı' },
-      { value: 'Günlük', label: 'Fırsat bildirimi' },
-      { value: 'Tek panel', label: 'Teklif, sözleşme ve tedarikçi takibi' },
+      { value: 'Günlük', label: 'Sektörel fırsat bildirimi' },
+      { value: 'Tek panel', label: 'Metraj, maliyet ve teklif takibi' },
     ],
     problem: [
-      'Türkiye’de kamu ve özel sektör ihaleleri onlarca farklı portala dağınık halde yayımlanır. Firmalar bu portalları manuel takip etmek zorunda kalır; kritik son başvuru tarihlerini kaçırır veya uygun oldukları ihaleyi haberleri olmadan görürler.',
-      'Teklif hazırlık süreci de büyük bir koordinasyon yüküdür: belgeler e-posta trafiğinde kaybolur, versiyon karmaşası yaşanır, teklif verilen ama kazanılmayan ihalelerin nedeni hiç analiz edilmez. Tedarikçi performansı ise çoğu zaman hiç ölçülmez.',
+      'İnşaat firmaları için ihaleler EKAP, ilan.gov.tr, kamu kurumu siteleri ve özel sektör ilan panolarına dağınık halde yayımlanır. Estimator ve teklif ekibi her gün onlarca portalı manuel tarar; iş grubuna, bütçesine ve konumuna uygun yapım işi ihalelerini geç fark eder ya da son başvuru tarihini kaçırır.',
+      'Teklif hazırlığı ise ayrı bir yük: metraj ve yaklaşık maliyet hesapları dağınık Excel dosyalarında, iş deneyim belgeleri, kapasite raporları ve güncel borç yoktur yazıları e-posta trafiğinde kaybolur. Yanlış veya eksik bir belge, haftalarca emek harcanan teklifin geçersiz sayılmasıyla sonuçlanabilir.',
     ],
     solution: [
-      'İhaleYapı, tüm ihale kaynaklarını tek panelde toplar; sektör ve anahtar kelime bazlı filtrelerinize uyan fırsatları günlük olarak önünüze getirir. Son başvuru tarihi yaklaşan ihaleler otomatik olarak hatırlatılır.',
-      'Teklif hazırlama süreci platformun içinde yürür: şablonlar, belge kontrol listeleri, onay akışları ve versiyon geçmişi tek yerde. Kazanılan ve kaybedilen ihaleler kayıt altına alınarak kazanma oranı analizleriyle gelecek teklif stratejisi veriye dayalı hale gelir.',
+      'İhaleYapı, inşaat sektörüne özel filtrelerle yalnızca yapım işi ihalelerini toplar: iş grubu (altyapı, üstyapı, ağır/küçük çaplı işler), il, bütçe aralığı ve anahtar kelime kriterlerinize uyan fırsatlar günlük olarak panelinize düşer; son başvuru tarihi yaklaşan ihaleler otomatik hatırlatılır.',
+      'Platformun içinde metraj ve yaklaşık maliyet hesaplamaları standartlaşır, birim fiyat analizleriyle kâr marjı teklif verilmeden net görülür. Zorunlu belge kontrol listeleri — iş deneyimi, kapasite raporu, SGK ve maliye borç yoktur yazıları — teklif dosyasının eksiksiz hazırlanmasını garanti eder; kazanılan ve kaybedilen ihaleler kayıt altına alınarak kazanma oranı analizleriyle bir sonraki teklif stratejiniz veriye dayanır.',
     ],
     features: [
       {
-        title: 'Birleşik İhale Takibi',
+        title: 'İnşata Özel İhale Takibi',
         description:
-          'Kamu ihale portalları ve özel sektör ilan kaynakları tek panelde; sektör, il, bütçe ve anahtar kelime filtreleriyle yalnızca size uygun fırsatlar listelenir.',
+          'EKAP, ilan.gov.tr ve özel sektör ilan kaynakları tek panelde; yapım işi filtresi, iş grubu, il ve bütçe kriterleriyle yalnızca firmanıza uygun ihaleler listelenir.',
       },
       {
-        title: 'Akıllı Hatırlatmalar',
+        title: 'Metraj & Yaklaşık Maliyet',
         description:
-          'Son başvuru tarihi yaklaşan, dokümanı eksik veya onay bekleyen teklifler için otomatik bildirimler; hiçbir fırsat tarih kaçırılarak kaybedilmez.',
+          'Poz bazlı metraj girişi ve yaklaşık maliyet hesaplamaları platformun içinde yürür; dağınık Excel dosyaları tarihe karışır.',
       },
       {
-        title: 'Teklif Yönetimi',
+        title: 'Birim Fiyat ve Kârlılık Analizi',
         description:
-          'Teklif şablonları, zorunlu belge kontrol listeleri ve versiyonlama ile hazırlık süreci standartlaşır; onay akışları yönetici görünürlüğü sağlar.',
+          'İhale birim fiyatları, maliyet kalemleri ve hedef kâr marjı yan yana; teklif verilmeden önce kârlılık senaryoları net görülür.',
       },
       {
-        title: 'Tedarikçi Portalı',
+        title: 'Teklif Dosyası Hazırlığı',
         description:
-          'Tedarikçiler kendi performansını görür; fiyat teklifleri, termin takibi ve değerlendirme süreçleri platform üzerinden yürütülür.',
+          'Şartname bazlı zorunlu belge kontrol listeleri: iş deneyimi, kapasite raporu, SGK ve maliye borç yoktur yazıları eksiksiz takip edilir, teklif geçersiz kalma riski ortadan kalkar.',
       },
       {
-        title: 'Bütçe ve Maliyet Planlama',
+        title: 'Kritik Tarih Hatırlatmaları',
         description:
-          'İhale bazlı maliyet kalemleri, birim fiyatlar ve kârlılık senaryoları hesaplanır; teklif vermeden önce kâr marjı net görülür.',
+          'Son başvuru tarihi, belge yenileme ve onay bekleyen teklifler için otomatik e-posta/SMS bildirimleri; hiçbir fırsat tarih kaçırılarak kaybedilmez.',
       },
       {
-        title: 'Performans Analitiği',
+        title: 'Kazanma Oranı Analizi',
         description:
-          'Kazanma oranı, ihale başına maliyet, rakip analizi ve tedarikçi performansı tek raporlaşmada; strateji tahminle değil veriyle kurulur.',
+          'Kazanılan ve kaybedilen ihaleler kayıt altında; ihale başına maliyet, rakip yoğunluğu ve kazanma oranı analizleriyle teklif stratejisi güçlenir.',
       },
     ],
     howItWorks: [
       {
-        title: 'Profilinizi ve filtrelerinizi belirleyin',
+        title: 'Firma profilinizi oluşturun',
         description:
-          'Faaliyet alanlarınızı, ilgili olduğunuz sektörleri ve anahtar kelimeleri girin; sistem size uygun ihaleleri seçmeye başlar.',
+          'İş gruplarınızı (altyapı, üstyapı, taahhüt sınırınız), faaliyet gösterdiğiniz illeri ve bütçe aralığınızı tanımlayın; sistem size uygun yapım işi ihalelerini seçmeye başlar.',
       },
       {
-        title: 'Fırsatları panelden takip edin',
+        title: 'Fırsatları panelden izleyin',
         description:
-          'Tüm kaynaklardan gelen ilanlar günlük olarak listelenir; kritik tarihler için otomatik hatırlatmalar alırsınız.',
+          'EKAP, ilan.gov.tr ve diğer kaynaklardan gelen ihaleler günlük listelenir; kritik tarihler için otomatik hatırlatmalar alırsınız.',
       },
       {
-        title: 'Teklifinizi platformda hazırlayın',
+        title: 'Metraj ve maliyetle teklif hazırlayın',
         description:
-          'Şablonlar ve kontrol listeleriyle teklif dosyasını oluşturun, versiyonları yönetin ve onay akışına sunun.',
+          'Platformda metraj ve yaklaşık maliyetinizi hesaplayın, birim fiyat analiziyle kâr marjınızı netleştirin, belge kontrol listesiyle eksiksiz teklif dosyanızı oluşturun.',
       },
       {
         title: 'Sonuçları analiz ederek büyüyün',
         description:
-          'Kazanılan ve kaybedilen ihaleleri kayıt altına alın; kazanma oranı analizleriyle bir sonraki teklifinizi güçlendirin.',
+          'Kazanılan ve kaybedilen ihaleleri kayıt altına alın; kazanma oranı analizleriyle bir sonraki teklifinizi daha güçlü verin.',
       },
     ],
-    techStack: ['Next.js', 'PostgreSQL', 'REST API', 'Rol Bazlı Yetkilendirme', 'İlan Toplayıcı Servisler', 'E-posta/SMS Bildirim'],
+    techStack: ['Next.js', 'PostgreSQL', 'REST API', 'Rol Bazlı Yetkilendirme', 'İhale Kaynağı Toplayıcı Servisler', 'E-posta/SMS Bildirim'],
     targetAudience: [
-      'Kamu ihalelerinden düzenli iş alan inşaat, mühendislik ve hizmet firmaları',
-      'Teklif hazırlama sürecini dağınık dosyalardan kurtarmak isteyen satınalma ekipleri',
-      'Tedarikçi performansını ölçmek isteyen üretim ve sanayi şirketleri',
-      'Yeni pazarlara açılırken ihale fırsatlarını sistemli takip etmek isteyen büyüyen KOBİ\'ler',
+      'Kamu yapım işi ihalelerinden düzenli iş alan müteahhit ve inşaat firmaları',
+      'Metraj ve yaklaşık maliyet hesabını dijitalleştirmek isteyen estimator ekipleri',
+      'Teklif hazırlık sürecinde belge karmaşası yaşayan taahhüt departmanları',
+      'Altyapı ve üstyapı işlerinde büyümek isteyen taşeron ve yapı malzemesi firmaları',
     ],
     faqs: [
       {
         question: 'Hangi ihale kaynakları takip ediliyor?',
         answer:
-          'Kamu İhale Kanunu kapsamındaki başlıca ilan portalları ile sektörel özel ilan kaynakları platformda birleştirilir. Talep halinde şirketinizin izlemesi gereken özel kaynaklar da eklenebilir.',
+          'EKAP, ilan.gov.tr, kamu kurumlarının ilan sayfaları ile sektörel özel ilan kaynakları platformda birleştirilir; yalnızca yapım işi ihaleleri sektörel filtrelerle listelenir. Talep halinde firmanızın izlemesi gereken özel kaynaklar da eklenebilir.',
       },
       {
-        question: 'Kaç kullanıcıyla kullanabiliriz?',
+        question: 'Metraj ve yaklaşık maliyet hesabı nasıl çalışıyor?',
         answer:
-          'Rol bazlı yetkilendirme sayesinde satınalma, hukuk ve yönetim ekiplerinden istediğiniz sayıda kullanıcıyı farklı yetki seviyeleriyle tanımlayabilirsiniz.',
+          'İhale dokümanındaki pozları platforma girip metraj değerlerinizi işlersiniz; birim fiyatlarla yaklaşık maliyet ve hedef kâr marjınız otomatik hesaplanır. Hesaplamalarınız teklif bazlı saklanır ve bir sonraki benzer ihalede şablon olarak kullanılabilir.',
       },
       {
-        question: 'Mevcut dosyalarımızı taşıyabilir miyiz?',
+        question: 'Belge kontrol listesinde neler var?',
         answer:
-          'Evet. Kurulum aşamasında mevcut teklif şablonlarınızı, tedarikçi listenizi ve geçmiş ihale kayıtlarınızı platforma aktarıyoruz; geçmiş veri kaybı yaşanmaz.',
+          'Şartnameye göre değişmekle birlikte tipik olarak iş deneyim belgeleri, kapasite raporu, SGK ve maliye borç yoktur yazıları, mesleki yeterlilik ve imza sirküleri izlenir. Eksik belge, son başvuru tarihinden önce otomatik olarak hatırlatılır.',
       },
       {
         question: 'Bulutta mı çalışıyor, kurulum gerekiyor mu?',
         answer:
-          'İhaleYapı tamamen bulut tabanlıdır; sunucu kurulumu veya IT altyapısı gerektirmez. Tarayıcıdan erişilir ve mobil cihazlarda da kullanılabilir.',
+          'İhaleYapı tamamen bulut tabanlıdır; sunucu kurulumu veya IT altyapısı gerektirmez. Tarayıcıdan erişilir, şantiyeden mobil cihazla da kullanılabilir.',
       },
     ],
   },

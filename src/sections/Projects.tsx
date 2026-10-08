@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, UtensilsCrossed, ShoppingCart, Bot } from 'lucide-react';
+import { ArrowUpRight, UtensilsCrossed, HardHat, Bot } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -34,12 +34,13 @@ const projects: Project[] = [
     id: 2,
     slug: 'ihaleyapi',
     name: 'İhaleYapı',
-    tagline: 'İhale & Tedarik Yönetimi',
-    description: 'Kamu ve özel sektör için ihale ve tedarik süreçleri yönetim platformu. İhale takibi ve teklif yönetimi.',
-    icon: ShoppingCart,
+    tagline: 'İnşaat Sektörüne Özel İhale Platformu',
+    description:
+      'İnşaat ve yapı firmaları için sektöre özel geliştirilen ihale yönetim platformu. Yapım işi ihale takibi, metraj ve yaklaşık maliyet hesabı, belge kontrollü teklif hazırlığı.',
+    icon: HardHat,
     color: 'text-emerald-500',
     gradient: 'from-emerald-500/20 to-teal-500/20',
-    features: ['İhale Takibi', 'Teklif Yönetimi', 'Tedarikçi Portalı', 'Bütçe Planlama'],
+    features: ['Yapım İşi İhale Takibi', 'Metraj & Yaklaşık Maliyet', 'Belge Kontrol Listeleri', 'Kazanma Analizi'],
     status: 'Aktif',
     url: 'https://ihaleyapi.com.tr'
   },
