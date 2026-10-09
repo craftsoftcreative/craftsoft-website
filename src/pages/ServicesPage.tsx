@@ -128,8 +128,7 @@ export function ServicesPage() {
                 Ücretsiz keşif görüşmesinde işletmenizi dinliyor, ihtiyacınıza en uygun çözümü birlikte belirliyoruz.
               </p>
               <Link
-                to="/"
-                state={{ scrollTo: 'iletisim' }}
+                to="/iletisim"
                 className="relative inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-craft-orange font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               >
                 Ücretsiz Görüşme Planla

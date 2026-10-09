@@ -186,8 +186,7 @@ export function ServiceDetailPage() {
                 className="flex flex-wrap gap-4"
               >
                 <Link
-                  to="/"
-                  state={{ scrollTo: 'iletisim' }}
+                  to="/iletisim"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl gradient-bg text-white font-semibold transition-all duration-300 hover:shadow-glow-orange hover:scale-105"
                 >
                   Bu Hizmet İçin Teklif Al
@@ -284,8 +283,7 @@ export function ServiceDetailPage() {
                     ))}
                   </div>
                   <Link
-                    to="/"
-                    state={{ scrollTo: 'iletisim' }}
+                    to="/iletisim"
                     className="flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl gradient-bg text-white font-semibold transition-all duration-300 hover:shadow-glow-orange hover:scale-[1.02]"
                   >
                     Teklif Al

@@ -135,20 +135,20 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <button
-                  onClick={() => goToAnchor('projeler')}
+                <Link
+                  to="/projeler"
                   className="text-white/60 hover:text-craft-orange transition-colors text-sm"
                 >
                   Projelerimiz
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => goToAnchor('hakkimizda')}
+                <Link
+                  to="/hakkimizda"
                   className="text-white/60 hover:text-craft-orange transition-colors text-sm"
                 >
                   Hakkımızda
-                </button>
+                </Link>
               </li>
               <li>
                 <button
@@ -159,12 +159,12 @@ export function Footer() {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => goToAnchor('iletisim')}
+                <Link
+                  to="/iletisim"
                   className="text-white/60 hover:text-craft-orange transition-colors text-sm"
                 >
                   İletişim
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

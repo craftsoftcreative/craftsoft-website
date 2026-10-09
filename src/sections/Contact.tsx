@@ -1,8 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Clock } from 'lucide-react';
 import { toast } from 'sonner';
 import { submitLead } from '@/lib/leadApi';
@@ -20,11 +29,14 @@ const SERVICE_LABELS: Record<string, string> = {
   software: 'Yazılım Geliştirme',
 };
 
+// Reklam bütçesi sorusu yalnızca reklam hizmetlerinde sorulur
+const ADS_SERVICES = ['meta', 'google'];
+
 const BUDGET_OPTIONS = [
-  { value: '5-10k', label: '5.000 - 10.000 TL' },
   { value: '10-25k', label: '10.000 - 25.000 TL' },
   { value: '25-50k', label: '25.000 - 50.000 TL' },
-  { value: '50k+', label: '50.000 TL üzeri' },
+  { value: '50-100k', label: '50.000 - 100.000 TL' },
+  { value: '100k+', label: '100.000 TL üzeri' },
 ];
 
 const contactInfo = [
@@ -48,7 +60,7 @@ const contactInfo = [
   }
 ];
 
-export function Contact() {
+export function Contact({ hideHeader = false }: { hideHeader?: boolean }) {
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -62,8 +74,10 @@ export function Contact() {
     phone: '',
     message: ''
   });
+  const [kvkkAccepted, setKvkkAccepted] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const recaptchaEnabled = isRecaptchaConfigured();
+  const isAdsService = ADS_SERVICES.includes(formData.service);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -84,6 +98,16 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.service) {
+      toast.error('Lütfen ilgilendiğiniz hizmeti seçin.');
+      return;
+    }
+
+    if (!kvkkAccepted) {
+      toast.error('Devam etmek için KVKK aydınlatma metnini onaylayın.');
+      return;
+    }
 
     if (recaptchaEnabled && !recaptchaToken) {
       toast.error('Lütfen "Ben robot değilim" doğrulamasını tamamlayın.');
@@ -119,6 +143,7 @@ export function Contact() {
       // 3 saniye sonra formu sıfırla
       setTimeout(() => {
         setIsSubmitted(false);
+        setKvkkAccepted(false);
         setRecaptchaToken(null);
         resetRecaptcha();
         setFormData({ name: '', email: '', company: '', service: '', budget: '', phone: '', message: '' });
@@ -132,10 +157,19 @@ export function Contact() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleServiceChange = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      service: value,
+      // Reklam hizmeti değişince bütçe seçimini sıfırla
+      budget: ADS_SERVICES.includes(value) ? prev.budget : '',
     }));
   };
 
@@ -143,6 +177,7 @@ export function Contact() {
     <section id="iletisim" ref={sectionRef} className="relative py-24 sm:py-32 bg-gray-50">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
+        {!hideHeader && (
         <div className="text-center mb-16 sm:mb-20">
           <span className="inline-block px-4 py-1.5 rounded-full bg-pink-100 text-pink-600 text-sm font-medium mb-4">
             İletişim
@@ -155,6 +190,7 @@ export function Contact() {
             Fikirlerinizi hayata geçirmek için bir adım ötedeyiz. Bize ulaşın, birlikte çalışalım.
           </p>
         </div>
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Contact Info */}
@@ -296,35 +332,59 @@ export function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                 <div className="space-y-2">
                   <Label htmlFor="service" className="text-gray-700">İlgilendiğiniz Hizmet *</Label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
+                  <Select
+                    value={formData.service || undefined}
+                    onValueChange={handleServiceChange}
                     required
-                    className="w-full h-10 px-3 rounded-md bg-gray-50 border border-gray-200 text-gray-900 focus:border-craft-orange/50 focus:ring-1 focus:ring-craft-orange/20 outline-none"
                   >
-                    <option value="">Hizmet Seçin</option>
-                    {Object.entries(SERVICE_LABELS).map(([value, label]) => (
-                      <option key={value} value={value}>{label}</option>
-                    ))}
-                  </select>
+                    <SelectTrigger
+                      id="service"
+                      className="w-full h-11 px-4 bg-gray-50 border-gray-200 text-gray-900 rounded-xl focus:ring-craft-orange/20 focus:border-craft-orange/50 data-[placeholder]:text-gray-400"
+                    >
+                      <SelectValue placeholder="Hizmet seçin" />
+                    </SelectTrigger>
+                    <SelectContent className="rounded-xl">
+                      {Object.entries(SERVICE_LABELS).map(([value, label]) => (
+                        <SelectItem key={value} value={value} className="rounded-lg focus:bg-orange-50 focus:text-craft-orange">
+                          {label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="budget" className="text-gray-700">Aylık Bütçe Aralığınız</Label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleChange}
-                    className="w-full h-10 px-3 rounded-md bg-gray-50 border border-gray-200 text-gray-900 focus:border-craft-orange/50 focus:ring-1 focus:ring-craft-orange/20 outline-none"
-                  >
-                    <option value="">Belirtmek istemiyorum</option>
-                    {BUDGET_OPTIONS.map((opt) => (
-                      <option key={opt.value} value={opt.value}>{opt.label}</option>
-                    ))}
-                  </select>
-                </div>
+                {isAdsService ? (
+                  <div className="space-y-2">
+                    <Label htmlFor="budget" className="text-gray-700">Aylık Reklam Bütçeniz</Label>
+                    <Select
+                      value={formData.budget || undefined}
+                      onValueChange={(value) => setFormData(prev => ({ ...prev, budget: value }))}
+                    >
+                      <SelectTrigger
+                        id="budget"
+                        className="w-full h-11 px-4 bg-gray-50 border-gray-200 text-gray-900 rounded-xl focus:ring-craft-orange/20 focus:border-craft-orange/50 data-[placeholder]:text-gray-400"
+                      >
+                        <SelectValue placeholder="Bütçe aralığı seçin" />
+                      </SelectTrigger>
+                      <SelectContent className="rounded-xl">
+                        {BUDGET_OPTIONS.map((opt) => (
+                          <SelectItem key={opt.value} value={opt.value} className="rounded-lg focus:bg-orange-50 focus:text-craft-orange">
+                            {opt.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    <Label htmlFor="project-type" className="text-gray-700">Proje Türü</Label>
+                    <Input
+                      id="project-type"
+                      name="projectTypeNote"
+                      placeholder="Örn. kurumsal site, QR menü, ihale paneli..."
+                      className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-craft-orange/50 focus:ring-craft-orange/20"
+                    />
+                  </div>
+                )}
               </div>
 
               <div className="space-y-2 mb-6">
@@ -339,6 +399,22 @@ export function Contact() {
                   rows={5}
                   className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-craft-orange/50 focus:ring-craft-orange/20 resize-none"
                 />
+              </div>
+
+              <div className="flex items-start gap-3 mb-6">
+                <Checkbox
+                  id="kvkk"
+                  checked={kvkkAccepted}
+                  onCheckedChange={(checked) => setKvkkAccepted(checked === true)}
+                  className="mt-0.5 data-[state=checked]:bg-craft-orange data-[state=checked]:border-craft-orange"
+                />
+                <label htmlFor="kvkk" className="text-sm text-gray-500 leading-relaxed cursor-pointer select-none">
+                  Kişisel verilerimin,{' '}
+                  <Link to="/yasal/kvkk-aydinlatma-metni" className="text-craft-orange hover:underline" target="_blank">
+                    KVKK Aydınlatma Metni
+                  </Link>{' '}
+                  kapsamında teklif verilmesi amacıyla işlenmesini kabul ediyorum. *
+                </label>
               </div>
 
               {recaptchaEnabled && (

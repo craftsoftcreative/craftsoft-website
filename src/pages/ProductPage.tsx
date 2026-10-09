@@ -192,8 +192,7 @@ export function ProductPage() {
                   <ExternalLink className="w-4 h-4" />
                 </a>
                 <Link
-                  to="/"
-                  state={{ scrollTo: 'iletisim' }}
+                  to="/iletisim"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white/5 border border-white/15 text-white font-semibold transition-all duration-300 hover:bg-white/10"
                 >
                   Bu Ürün Hakkında Konuşalım
@@ -455,8 +454,7 @@ export function ProductPage() {
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Link
-                    to="/"
-                    state={{ scrollTo: 'iletisim' }}
+                    to="/iletisim"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl gradient-bg text-white font-semibold transition-all duration-300 hover:shadow-glow-orange hover:scale-105"
                   >
                     Bize Ulaşın

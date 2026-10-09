@@ -3,7 +3,7 @@ import { chromium } from 'playwright-core';
 
 const BASE = process.argv[2] || 'http://localhost:5173';
 const ROUTES = [
-  '/', '/hizmetler', '/blog',
+  '/', '/hizmetler', '/blog', '/projeler', '/hakkimizda', '/iletisim',
   '/hizmetler/dijital-pazarlama', '/hizmetler/meta-reklamlari', '/hizmetler/google-ads',
   '/hizmetler/sosyal-medya', '/hizmetler/video-fotograf', '/hizmetler/drone-cekim',
   '/hizmetler/web-tasarim', '/hizmetler/yazilim-gelistirme',

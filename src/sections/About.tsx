@@ -119,12 +119,12 @@ export function About() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mt-8">
-              <a 
-                href="#iletisim" 
+              <Link
+                to="/iletisim"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl gradient-bg text-white font-medium hover:opacity-90 transition-opacity hover:shadow-glow-orange"
               >
                 Bizimle Çalışın
-              </a>
+              </Link>
               <Link
                 to="/hizmetler"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-craft-orange font-semibold border-2 border-orange-200 hover:bg-orange-50 hover:border-craft-orange transition-colors"

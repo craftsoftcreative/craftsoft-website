@@ -374,8 +374,7 @@ export function BlogPage() {
                   Dijital projeleriniz için ücretsiz keşif görüşmesi planlayalım.
                 </p>
                 <Link
-                  to="/"
-                  state={{ scrollTo: 'iletisim' }}
+                  to="/iletisim"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-craft-orange text-sm font-semibold hover:scale-105 transition-transform"
                 >
                   Bize Ulaşın

@@ -26,10 +26,6 @@ export function Hero() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section 
       ref={heroRef}
@@ -69,7 +65,7 @@ export function Hero() {
               <Button 
                 size="lg" 
                 className="gradient-bg text-white border-0 hover:opacity-90 transition-all duration-300 hover:shadow-glow-orange group px-8"
-                onClick={() => scrollToSection('iletisim')}
+                onClick={() => navigate('/iletisim')}
               >
                 Ücretsiz Teklif Al
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

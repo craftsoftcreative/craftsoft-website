@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 interface FAQItem {
@@ -178,12 +179,12 @@ export function FAQ() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <p className="text-gray-500 mb-4">Başka sorularınız mı var?</p>
-          <a 
-            href="#iletisim"
+          <Link
+            to="/iletisim"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl gradient-bg text-white font-medium hover:opacity-90 transition-opacity hover:shadow-glow-orange"
           >
             Bize Ulaşın
-          </a>
+          </Link>
         </div>
       </div>
 

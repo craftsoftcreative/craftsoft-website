@@ -7,16 +7,14 @@ import { services } from '@/data/services';
 
 interface NavItem {
   label: string;
-  type: 'page' | 'anchor';
-  to?: string;
-  hash?: string;
+  to: string;
 }
 
 const navItems: NavItem[] = [
-  { label: 'Projeler', type: 'anchor', hash: 'projeler' },
-  { label: 'Blog', type: 'page', to: '/blog' },
-  { label: 'Hakkımızda', type: 'anchor', hash: 'hakkimizda' },
-  { label: 'İletişim', type: 'anchor', hash: 'iletisim' },
+  { label: 'Projeler', to: '/projeler' },
+  { label: 'Blog', to: '/blog' },
+  { label: 'Hakkımızda', to: '/hakkimizda' },
+  { label: 'İletişim', to: '/iletisim' },
 ];
 
 export function Navbar() {
@@ -57,42 +55,24 @@ export function Navbar() {
   const handleNav = (item: NavItem) => {
     setIsMobileMenuOpen(false);
     setIsServicesOpen(false);
-    if (item.type === 'page' && item.to) {
-      navigate(item.to);
-      return;
-    }
-    if (item.hash) {
-      if (location.pathname !== '/') {
-        navigate('/', { state: { scrollTo: item.hash } });
-      } else {
-        document.getElementById(item.hash)?.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+    navigate(item.to);
   };
 
   const goToContact = () => {
     setIsMobileMenuOpen(false);
     setIsServicesOpen(false);
-    if (location.pathname !== '/') {
-      navigate('/', { state: { scrollTo: 'iletisim' } });
-    } else {
-      document.getElementById('iletisim')?.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigate('/iletisim');
   };
 
-  const isActive = (item: NavItem) =>
-    (item.type === 'page' && item.to && location.pathname.startsWith(item.to)) ||
-    (item.type === 'anchor' && location.pathname === '/' && location.hash === `#${item.hash}`);
+  const isActive = (item: NavItem) => location.pathname.startsWith(item.to);
 
-  const isServicesActive =
-    location.pathname.startsWith('/hizmetler') ||
-    (location.pathname === '/' && location.hash === '#hizmetler');
+  const isServicesActive = location.pathname.startsWith('/hizmetler');
 
   const navLinkClass = (active: boolean) =>
-    `relative flex items-center gap-1 px-5 py-2.5 text-base font-medium rounded-xl transition-colors duration-300 ${
+    `relative flex items-center gap-1 px-5 py-2.5 text-base font-semibold rounded-xl transition-colors duration-300 ${
       active
         ? 'text-craft-orange'
-        : 'text-gray-600 hover:text-gray-900 hover:bg-orange-50'
+        : 'text-gray-800 hover:text-craft-orange hover:bg-orange-50'
     }`;
 
   return (
@@ -109,7 +89,7 @@ export function Navbar() {
           }
         `}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5 group" aria-label="Craftsoft anasayfa">
@@ -131,12 +111,11 @@ export function Navbar() {
             <div className="hidden lg:flex items-center gap-0.5">
               {/* Hizmetler — Mega Menü */}
               <div
-                className="relative"
                 onMouseEnter={openServices}
                 onMouseLeave={scheduleClose}
               >
                 <button
-                  onClick={() => setIsServicesOpen((v) => !v)}
+                  onClick={() => navigate('/hizmetler')}
                   aria-expanded={isServicesOpen}
                   aria-haspopup="true"
                   className={navLinkClass(isServicesActive)}
@@ -150,14 +129,15 @@ export function Navbar() {
                 <AnimatePresence>
                   {isServicesOpen && (
                     <motion.div
-                      initial={{ opacity: 0, y: 12, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.22, ease: 'easeOut' }}
-                      className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[52rem] max-w-[calc(100vw-2rem)]"
+                      className="absolute left-0 right-0 top-full pt-3"
                     >
-                      <div className="overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-2xl shadow-gray-900/10">
-                        <div className="grid grid-cols-[1fr_1fr_240px]">
+                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-2xl shadow-gray-900/10">
+                          <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_250px]">
                           {/* Hizmet listesi */}
                           <div className="col-span-2 grid grid-cols-2 gap-1 p-4">
                             {services.map((service) => {
@@ -217,6 +197,7 @@ export function Navbar() {
                           </span>
                           <ArrowRight className="w-4 h-4 text-gray-400 group-hover/footer:text-craft-orange group-hover/footer:translate-x-1 transition-all" />
                         </Link>
+                        </div>
                       </div>
                     </motion.div>
                   )}
@@ -230,13 +211,11 @@ export function Navbar() {
                   className={navLinkClass(isActive(item))}
                 >
                   {item.label}
-                  {item.type === 'page' && (
-                    <span
-                      className={`absolute left-5 right-5 bottom-1 h-0.5 rounded-full gradient-bg transition-transform duration-300 origin-left ${
-                        isActive(item) ? 'scale-x-100' : 'scale-x-0'
-                      }`}
-                    />
-                  )}
+                  <span
+                    className={`absolute left-5 right-5 bottom-1 h-0.5 rounded-full gradient-bg transition-transform duration-300 origin-left ${
+                      isActive(item) ? 'scale-x-100' : 'scale-x-0'
+                    }`}
+                  />
                 </button>
               ))}
             </div>
