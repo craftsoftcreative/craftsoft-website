@@ -128,7 +128,7 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-0.5">
+            <div className="hidden lg:flex items-center gap-0.5">
               {/* Hizmetler — Mega Menü */}
               <div
                 className="relative"
@@ -242,7 +242,7 @@ export function Navbar() {
             </div>
 
             {/* CTA Button */}
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <Button
                 onClick={goToContact}
                 className="gradient-bg text-white border-0 text-base px-6 hover:shadow-glow-orange transition-all duration-300 hover:scale-105"
@@ -255,7 +255,7 @@ export function Navbar() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Menü"
-              className="md:hidden p-2 rounded-lg bg-orange-50 text-craft-orange hover:bg-orange-100 transition-colors"
+              className="lg:hidden p-2 rounded-lg bg-orange-50 text-craft-orange hover:bg-orange-100 transition-colors"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -271,7 +271,7 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 md:hidden bg-black/20 backdrop-blur-sm"
+              className="fixed inset-0 z-40 lg:hidden bg-black/20 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div
@@ -279,7 +279,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -16, scale: 0.98 }}
               transition={{ duration: 0.25 }}
-              className="fixed top-20 left-4 right-4 z-40 md:hidden p-5 rounded-2xl bg-white shadow-xl border border-gray-100 max-h-[calc(100vh-6rem)] overflow-y-auto"
+              className="fixed top-20 left-4 right-4 z-40 lg:hidden p-5 rounded-2xl bg-white shadow-xl border border-gray-100 max-h-[calc(100vh-6rem)] overflow-y-auto"
             >
               {/* Hizmetler (akordeon) */}
               <motion.div

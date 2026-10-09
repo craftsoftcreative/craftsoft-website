@@ -8,6 +8,8 @@ const ROUTES = [
   '/hizmetler/sosyal-medya', '/hizmetler/video-fotograf', '/hizmetler/drone-cekim',
   '/hizmetler/web-tasarim', '/hizmetler/yazilim-gelistirme',
   '/blog/teknik-seo-rehberi', '/blog/yapay-zeka-dijital-pazarlama', '/blog/donusum-odakli-web-tasarimi',
+  '/urunler/akillisofra', '/urunler/ihaleyapi', '/urunler/salvo-agent',
+  '/yasal/kvkk-aydinlatma-metni',
 ];
 
 const WIDTH = Number(process.env.AUDIT_WIDTH || 390);
